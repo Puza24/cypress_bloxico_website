@@ -6,7 +6,7 @@
   
 ## Description
 
-This repository purpose is practising writing Auotmation Tests for [Bloxico website](https://bloxico.com/) with Cypress Automation tool.
+This repository purpose is practising writing Automation Tests for [Bloxico website](https://bloxico.com/) with Cypress Automation tool.
 
 ## Prerequisites
 
