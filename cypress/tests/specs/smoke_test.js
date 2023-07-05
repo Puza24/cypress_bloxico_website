@@ -9,4 +9,7 @@ describe("Smoke test Bloxico Website", () => {
         cy.get(".elementor-heading-title:first-of-type:nth-of-type(1)").should("be.visible")
         cy.contains("Second to none").should('be.visible') 
     })
+    it("Click on Let's get started button", () => {
+        cy.contains("LET'S GET STARTED").click()
+    })
 })
