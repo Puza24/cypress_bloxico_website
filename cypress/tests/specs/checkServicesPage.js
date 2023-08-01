@@ -19,6 +19,7 @@ describe("Check Services page", () => {
                 expect($element.text()).to.equal(expectedTexts[index - 4])
             })
         }
+        // read more/read less button and text assertion
     })
     it("Check How we do it Services section", () => {
         cy.get('h2[class="elementor-heading-title elementor-size-default"]').as('HeaderText')
@@ -28,5 +29,6 @@ describe("Check Services page", () => {
         // cy.url().should('include', 'Bloxico-RSSP-Procedure')
         cy.get('@sectionButton').eq(1).click()
         cy.url().should('include', 'contact')
+        cy.go('back')
     })
 })
