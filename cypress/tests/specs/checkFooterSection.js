@@ -1,31 +1,33 @@
 /// <reference types="Cypress" />
 
+import homePage from "../../support/pages/homePage"
+
 describe("Check Footer Section", () => {
 
     beforeEach(() => {
         cy.visit('https://bloxico.com/')
     })
     it("Check redirection for Bloxico logo", () => {
-        cy.get('a[href="https://bloxico.com/"]:visible').eq(1).click()
+        homePage.clickBloxicoLogo()
         cy.url().should('include', 'bloxico')
     })
     it("Check Let's get in touch section", () => {
-        cy.contains("LET’S GET IN TOUCH!").should('be.visible')
-        cy.contains('.elementor-element-d8ef344', 'Veljka Dugoševića').should('be.visible')
+        homePage.elements.footerContactSection_Title().should('be.visible')
+        homePage.elements.footerAddress_Text().should('be.visible')
     })
     it("Check contact email address", () => {
-        cy.get('a[href="mailto:contact@bloxico.com"]').eq(0).should('not.be.disabled')
+        homePage.elements.footerEmail_Hyperlink().should('not.be.disabled')
     })
     it("Check Contact Us button", () => {
-        cy.contains('.elementor-button-content-wrapper', 'CONTACT US').find('.elementor-button-text').click()
+        homePage.clickContactUsButton()
         cy.url().should('include', 'contact')
     })
     it("Check Products hyperlink redirection", () => {
-        cy.get('a[href="https://bloxico.com/products/"]:visible').eq(1).click()
+        homePage.clickProductsHyperlink()
         cy.url().should('include', 'products')
     })
     it("Check Privacy Policy hyperlink redirection", () => {
-        cy.get('a[href="https://bloxico.com/privacy-policy/"]:visible').eq(0).click()
+        homePage.clickPrivacyPolicyHyperlink()
         cy.url().should('include', 'privacy-policy')
     })
     // it.only("Check Servies menu hyperlink redirections", () => {
@@ -49,39 +51,15 @@ describe("Check Footer Section", () => {
     //     })
     // })
     it("Check Services menu hyperlink redirections", () => {
-        cy.get('a[href="https://bloxico.com/services/"]:visible').eq(2).click();
+        homePage.clickServicesHyperlink()
         cy.url().should('include', 'services')
-        const hrefValues = [
-            'https://bloxico.com/services#software-development',
-            'https://bloxico.com/services#it-outsourcing',
-            'https://bloxico.com/services#blockchain-consulting'
-        ]
-        hrefValues.forEach((href) => {
-            cy.get(`a[href="${href}"]:visible`).each(($link) => {
-                cy.wrap($link).click()
-                cy.url().should('include', 'services')
-            })
-        })
+        cy.go('back')
+        homePage.checkFooterServicesMenu()
     })
     it("Check Project menu hyperlink redirections", () => {
-        cy.get('a[href="https://bloxico.com/projects/"]:visible').eq(1).click()
+        homePage.clickProjectHyperlink()
         cy.url().should('include', 'project')
         cy.go('back')
-
-        const hrefValues = [
-            'https://bloxico.com/projects#nft-tix',
-            'https://bloxico.com/projects#keevo',
-            'https://bloxico.com/projects#atala-scan',
-            'https://bloxico.com/projects#catalyst-voting-system',
-            'https://bloxico.com/projects#system-test-matrix'
-        ]
-        hrefValues.forEach((href) => {
-            cy.get(`a[href="${href}"]:visible`).each(($link) => {
-                cy.wrap($link).click()
-                cy.url().should('include', 'project')
-                cy.go('back')
-
-            })
-        })
+        homePage.checkFooterProjectsMenu()
     })
 })
