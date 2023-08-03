@@ -8,28 +8,24 @@ describe("Check Footer Section", () => {
         cy.visit('https://bloxico.com/')
     })
     it("Check redirection for Bloxico logo", () => {
-        homePage.clickBloxicoLogo()
-        cy.url().should('include', 'bloxico')
+        homePage.checkBloxicoLogoFromFooter()
     })
     it("Check Let's get in touch section", () => {
-        homePage.elements.footerContactSection_Title().should('be.visible')
-        homePage.elements.footerAddress_Text().should('be.visible')
+        homePage.checkLetsGetInTouchFromFooter()
     })
     it("Check contact email address", () => {
-        homePage.elements.footerEmail_Hyperlink().should('not.be.disabled')
+        homePage.footerEmail_Hyperlink().should('not.be.disabled')
     })
     it("Check Contact Us button", () => {
-        homePage.clickContactUsButton()
-        cy.url().should('include', 'contact')
+        homePage.checkContactUsPageFromFooter()
     })
     it("Check Products hyperlink redirection", () => {
-        homePage.clickProductsHyperlink()
-        cy.url().should('include', 'products')
+        homePage.checkProductsPageFromFooter()
     })
     it("Check Privacy Policy hyperlink redirection", () => {
-        homePage.clickPrivacyPolicyHyperlink()
-        cy.url().should('include', 'privacy-policy')
+        homePage.checkPrivacyPolicyPageFromFooter()
     })
+    //ToDo - Check if this is better option and why it is not working
     // it.only("Check Servies menu hyperlink redirections", () => {
     //     cy.get('a[style="color: #fff;"]').each(($el, index, $list) => {
     //         if (index < 4) {
@@ -51,15 +47,9 @@ describe("Check Footer Section", () => {
     //     })
     // })
     it("Check Services menu hyperlink redirections", () => {
-        homePage.clickServicesHyperlink()
-        cy.url().should('include', 'services')
-        cy.go('back')
-        homePage.checkFooterServicesMenu()
+        homePage.checkServicesMenuFromFooter()
     })
     it("Check Project menu hyperlink redirections", () => {
-        homePage.clickProjectHyperlink()
-        cy.url().should('include', 'project')
-        cy.go('back')
-        homePage.checkFooterProjectsMenu()
+        homePage.checkProjectsMenuFromFooter()
     })
 })

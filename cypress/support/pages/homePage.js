@@ -3,44 +3,51 @@
 // homePage.js
 //
 
+const urlData = require('../data/urlData')
 const BasePage = require('./basePage')
 
 class homePage extends BasePage {
 
     //Selectors
-    elements = {
-        footerBloxico_Logo: () => cy.get('a[href="https://bloxico.com/"]:visible').eq(1),
-        footerContactSection_Title: () => cy.contains("LET’S GET IN TOUCH!"),
-        footerAddress_Text: () => cy.contains('.elementor-element-d8ef344', 'Veljka Dugoševića'),
-        footerEmail_Hyperlink: () => cy.get('a[href="mailto:contact@bloxico.com"]').eq(0),
-        footerContact_Button: () => cy.contains('.elementor-button-content-wrapper', 'CONTACT US').find('.elementor-button-text'),
-        footerProducts_Hyperlink: () => cy.get('a[href="https://bloxico.com/products/"]:visible').eq(1),
-        footerPrivacyPolicy_Hyperlink: () => cy.get('a[href="https://bloxico.com/privacy-policy/"]:visible').eq(0),
-        footerServices_Hyperlink: () => cy.get('a[href="https://bloxico.com/services/"]:visible').eq(2),
-        footerProject_Hyperlink: () => cy.get('a[href="https://bloxico.com/projects/"]:visible').eq(1)
-    }
+    footerBloxico_Logo() { return cy.get('a[href="https://bloxico.com/"]:visible').eq(1) }
+    footerContactSection_Title() { return cy.contains("LET’S GET IN TOUCH!") }
+    footerAddress_Text() { return cy.contains('.elementor-element-d8ef344', 'Veljka Dugoševića') }
+    footerEmail_Hyperlink() { return cy.get('a[href="mailto:contact@bloxico.com"]').eq(0) }
+    footerContact_Button() { return cy.contains('.elementor-button-content-wrapper', 'CONTACT US').find('.elementor-button-text') }
+    footerProducts_Hyperlink() { return cy.get('a[href="https://bloxico.com/products/"]:visible').eq(1) }
+    footerPrivacyPolicy_Hyperlink() { return cy.get('a[href="https://bloxico.com/privacy-policy/"]:visible').eq(0) }
+    footerServices_Hyperlink() { return cy.get('a[href="https://bloxico.com/services/"]:visible').eq(2) }
+    footerProject_Hyperlink() { return cy.get('a[href="https://bloxico.com/projects/"]:visible').eq(1) }
+
     //Methods
-    clickBloxicoLogo() {
-        this.elements.footerBloxico_Logo().click()
+    checkBloxicoLogoFromFooter() {
+        this.footerBloxico_Logo().click()
+        cy.url().should('include', 'bloxico')
     }
-    clickProductsHyperlink() {
-        this.elements.footerProducts_Hyperlink().click()
+    checkLetsGetInTouchFromFooter() {
+        this.footerContactSection_Title().should('be.visible')
+        this.footerAddress_Text().should('be.visible')
     }
-    clickPrivacyPolicyHyperlink() {
-        this.elements.footerPrivacyPolicy_Hyperlink().click()
+    checkProductsPageFromFooter() {
+        this.footerProducts_Hyperlink().click()
+        cy.url().should('include', 'products')
     }
-    clickContactUsButton() {
-        this.elements.footerContact_Button().click()
+    checkPrivacyPolicyPageFromFooter() {
+        this.footerPrivacyPolicy_Hyperlink().click()
+        cy.url().should('include', 'privacy-policy')
+    }
+    checkContactUsPageFromFooter() {
+        this.footerContact_Button().click()
+        cy.url().should('include', 'contact')
     }
     clickServicesHyperlink() {
-        this.elements.footerServices_Hyperlink().click()
+        this.footerServices_Hyperlink().click()
     }
-    checkFooterServicesMenu() {
-        const hrefValues = [
-            'https://bloxico.com/services#software-development',
-            'https://bloxico.com/services#it-outsourcing',
-            'https://bloxico.com/services#blockchain-consulting'
-        ]
+    checkServicesMenuFromFooter() {
+        this.clickServicesHyperlink()
+        cy.url().should('include', 'services')
+        cy.go('back')
+        const hrefValues = [urlData.softwareDevelopmentURL, urlData.itOutsourcingURL, urlData.blockchainConsultingURL]
         hrefValues.forEach((href) => {
             cy.get(`a[href="${href}"]:visible`).each(($link) => {
                 cy.wrap($link).click()
@@ -50,16 +57,13 @@ class homePage extends BasePage {
         })
     }
     clickProjectHyperlink() {
-        this.elements.footerProject_Hyperlink().click()
+        this.footerProject_Hyperlink().click()
     }
-    checkFooterProjectsMenu() {
-        const hrefValues = [
-            'https://bloxico.com/projects#nft-tix',
-            'https://bloxico.com/projects#keevo',
-            'https://bloxico.com/projects#atala-scan',
-            'https://bloxico.com/projects#catalyst-voting-system',
-            'https://bloxico.com/projects#system-test-matrix'
-        ]
+    checkProjectsMenuFromFooter() {
+        this.clickProjectHyperlink()
+        cy.url().should('include', 'project')
+        cy.go('back')
+        const hrefValues = [urlData.nftTixURL, urlData.keevoURL, urlData.atalaScanURL, urlData.catalysVotingURL, urlData.testMatrixURL]
         hrefValues.forEach((href) => {
             cy.get(`a[href="${href}"]:visible`).each(($link) => {
                 cy.wrap($link).click()
