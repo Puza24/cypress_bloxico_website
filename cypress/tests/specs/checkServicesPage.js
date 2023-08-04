@@ -5,7 +5,7 @@ const servicePage = require("../../support/pages/servicePage")
 describe("Check Services page", () => {
 
     beforeEach(() => {
-        cy.visit('https://bloxico.com/services/')
+        cy.visit('/services/')
     })
     it("Check Home Services section", () => {
         servicePage.servicesHome_Header()
@@ -18,6 +18,7 @@ describe("Check Services page", () => {
     })
     it("Check How we do it Services section", () => {
         servicePage.checkHowWeDoItHeader()
+        // ToDo - Check redirection when opened on the same window, not working atm
         // servicePage.readMoreRSSP_Button().invoke('removeAttr', 'target').click()
         // cy.url().should('include', 'Bloxico-RSSP-Procedure')
         // cy.go('back')

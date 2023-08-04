@@ -6,6 +6,7 @@ module.exports = defineConfig({
       // implement node event listeners here
     },
     specPattern: 'cypress/tests/specs/*.js',
+    baseUrl: 'https://bloxico.com/',
     viewportWidth: 1920,
     viewportHeight: 1080,
     pageLoadTimeout: 10000
