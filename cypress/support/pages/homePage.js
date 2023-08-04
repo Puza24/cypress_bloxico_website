@@ -22,7 +22,7 @@ class homePage extends BasePage {
     //Methods
     checkBloxicoLogoFromFooter() {
         this.footerBloxico_Logo().click()
-        cy.url().should('include', 'bloxico')
+        cy.url().should('include', urlData.footerTextURL[0])
     }
     checkLetsGetInTouchFromFooter() {
         this.footerContactSection_Title().should('be.visible')
@@ -30,25 +30,24 @@ class homePage extends BasePage {
     }
     checkProductsPageFromFooter() {
         this.footerProducts_Hyperlink().click()
-        cy.url().should('include', 'products')
+        cy.url().should('include', urlData.footerTextURL[1])
     }
     checkPrivacyPolicyPageFromFooter() {
         this.footerPrivacyPolicy_Hyperlink().click()
-        cy.url().should('include', 'privacy-policy')
+        cy.url().should('include', urlData.footerTextURL[2])
     }
     checkContactUsPageFromFooter() {
         this.footerContact_Button().click()
-        cy.url().should('include', 'contact')
+        cy.url().should('include', urlData.footerTextURL[3])
     }
     clickServicesHyperlink() {
         this.footerServices_Hyperlink().click()
     }
     checkServicesMenuFromFooter() {
         this.clickServicesHyperlink()
-        cy.url().should('include', 'services')
+        cy.url().should('include', urlData.footerTextURL[4])
         cy.go('back')
-        const hrefValues = [urlData.softwareDevelopmentURL, urlData.itOutsourcingURL, urlData.blockchainConsultingURL]
-        hrefValues.forEach((href) => {
+        urlData.footerServicesURL.forEach((href) => {
             cy.get(`a[href="${href}"]:visible`).each(($link) => {
                 cy.wrap($link).click()
                 cy.url().should('include', href)
@@ -61,10 +60,9 @@ class homePage extends BasePage {
     }
     checkProjectsMenuFromFooter() {
         this.clickProjectHyperlink()
-        cy.url().should('include', 'project')
+        cy.url().should('include', urlData.footerTextURL[5])
         cy.go('back')
-        const hrefValues = [urlData.nftTixURL, urlData.keevoURL, urlData.atalaScanURL, urlData.catalysVotingURL, urlData.testMatrixURL]
-        hrefValues.forEach((href) => {
+        urlData.footerProjectsURL.forEach((href) => {
             cy.get(`a[href="${href}"]:visible`).each(($link) => {
                 cy.wrap($link).click()
                 cy.url().should('include', href)
