@@ -3,6 +3,7 @@
 // servicesPage.js
 //
 
+const textData = require('../data/textData')
 const BasePage = require('./basePage')
 
 class servicesPage extends BasePage {
@@ -18,19 +19,18 @@ class servicesPage extends BasePage {
 
     //Methods
     checkServicesHomeHeader() {
-        this.servicesHome_Header().contains('Home • Services')
+        this.servicesHome_Header().contains(textData.header2[0])
     }
     checkServicesMainTitle() {
         this.servicesMain_Title().contains('When it comes to Blockchain, we can do it all')
     }
     checkBreakdownHeader() {
-        this.servicesBreakdown_Header().contains('SERVICE BREAKDOWN')
+        this.servicesBreakdown_Header().contains(textData.header2[1])
     }
     checkBreakdownSection() {
         for (let index = 4; index <= 6; index++) {
             this.services_Header().eq(index).should(($element) => {
-                const expectedTexts = ['Software Development', 'IT Outsourcing', 'Blockchain consulting']
-                expect($element.text()).to.equal(expectedTexts[index - 4])
+                expect($element.text()).to.equal(textData.breakdownSectionTitles[index - 4])
             })
         }
     }
@@ -38,7 +38,7 @@ class servicesPage extends BasePage {
         this.readMore_Button().should('not.be.disabled')
     }
     checkHowWeDoItHeader() {
-        this.servicesHowWeDoIt_Header().contains('HOW WE DO IT')
+        this.servicesHowWeDoIt_Header().contains(textData.header2[2])
     }
     checkLetsGetStartedButton() {
         this.letsGetStarted_Button().click()

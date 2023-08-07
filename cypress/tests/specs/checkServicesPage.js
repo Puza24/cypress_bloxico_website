@@ -8,7 +8,7 @@ describe("Check Services page", () => {
         cy.visit('/services/')
     })
     it("Check Home Services section", () => {
-        servicePage.servicesHome_Header()
+        servicePage.checkServicesHomeHeader()
         servicePage.checkServicesMainTitle()
     })
     it("Check Breakdown Services section", () => {
