@@ -5,5 +5,6 @@
 
 module.exports = {
     //Projects page
-    projectsBreakdownTitles: ['NFT TiX', 'KEEVO', 'Atala SCAN', 'Catalyst Voting System', 'System Test Matrix']
+    projectsBreakdownTitles: ['NFT TiX', 'KEEVO', 'Atala SCAN', 'Catalyst Voting System', 'System Test Matrix'], 
+    projectsPartnersURL: ['filecoin', 'copyleft.solutions']
 }

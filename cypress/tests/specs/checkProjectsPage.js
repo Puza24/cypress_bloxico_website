@@ -16,5 +16,9 @@ describe("Check Projects page", () => {
     })
     it("Check Partners Project section", () => {
         projectsPage.checkProjectsPartnerHeader()
+        projectsPage.checkProjectsPartnerIcons()
+    })
+    it("Check Contact section", () => {
+        projectsPage.checkProjectsLetsGetStartedButton()
     })
 })
