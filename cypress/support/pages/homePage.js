@@ -71,6 +71,5 @@ class homePage extends BasePage {
         })
     }
 }
-}
 
 module.exports = new homePage()
