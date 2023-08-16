@@ -19,15 +19,18 @@ Check if you already have Node or check Node version, run command:
 node -v
 ```
 
-## Cypress setup
+## How to clone repo
 
-Create package.json file for new project, run command:
+Clone repo https://github.com/Puza24/cypress_bloxico_website, run command:
+
+ ```
+  git clone https://github.com/Puza24/cypress_bloxico_website.git
+  ```
+
+To install all dependencies, run:
+
 ```
-npm init
-```
-To install Cypress, run command:
-```
-npm install cypress --save-dev
+npm install
 ```
 
 To run Cypress Test runner, run command:

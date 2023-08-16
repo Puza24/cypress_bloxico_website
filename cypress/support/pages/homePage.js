@@ -1,4 +1,4 @@
-// 
+//
 // Home page
 // homePage.js
 //
@@ -8,7 +8,7 @@ const BasePage = require('./basePage')
 
 class homePage extends BasePage {
 
-    //Selectors
+  //Selectors
     footerBloxico_Logo() { return cy.get('a[href="https://bloxico.com/"]:visible').eq(1) }
     footerContactSection_Title() { return cy.contains("LET’S GET IN TOUCH!") }
     footerAddress_Text() { return cy.contains('.elementor-element-d8ef344', 'Veljka Dugoševića') }
@@ -70,6 +70,7 @@ class homePage extends BasePage {
             })
         })
     }
+}
 }
 
 module.exports = new homePage()
