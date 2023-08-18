@@ -19,13 +19,13 @@ class servicesPage extends BasePage {
 
     //Methods
     checkServicesHomeHeader() {
-        this.servicesHome_Header().contains(textData.header2[0])
+        this.servicesHome_Header().contains(textData.servicesHeader2[0])
     }
     checkServicesMainTitle() {
         this.servicesMain_Title().contains('When it comes to Blockchain, we can do it all')
     }
     checkBreakdownHeader() {
-        this.servicesBreakdown_Header().contains(textData.header2[1])
+        this.servicesBreakdown_Header().contains(textData.servicesHeader2[1])
     }
     checkBreakdownSection() {
         for (let index = 4; index <= 6; index++) {
@@ -38,7 +38,7 @@ class servicesPage extends BasePage {
         this.readMore_Button().should('not.be.disabled')
     }
     checkHowWeDoItHeader() {
-        this.servicesHowWeDoIt_Header().contains(textData.header2[2])
+        this.servicesHowWeDoIt_Header().contains(textData.servicesHeader2[2])
     }
     checkLetsGetStartedButton() {
         this.letsGetStarted_Button().click()
