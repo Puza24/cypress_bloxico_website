@@ -10,8 +10,13 @@ describe("Check Services page", () => {
     it("Check Home Contact section", () => {
         contactPage.checkContactHomeSection()
     })
-    it.only("Check About Contact section", () => {
+    it("Check About Contact section", () => {
         contactPage.checkContactAboutSectionHeader()
         contactPage.checkContactAboutSection()
+        contactPage.checkJoinBloxicoButton()
+    })
+    it("Check Contact Bloxico section", () => {
+        contactPage.checkContactBloxicoHeader()
+        contactPage.checkContactBloxicoSection()
     })
 })

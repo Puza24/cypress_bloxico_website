@@ -11,6 +11,6 @@ module.exports = {
     footerTextURL: ['bloxico', 'products', 'privacy-policy', 'contact', 'services', 'projects'],
     //Contact page
     contactHeader2: ['Home • Bloxico', 'ABOUT BLOXICO', 'CONTACT BLOXICO'],
-    contactTitle: ['Proudly representing our values'],
+    contactTitle: ['Join the best Blockchain experts', 'Reach out and touch the future'],
     contactAboutTabs: ['Culture', 'Our Values', 'Our team', 'Our Partners']
 }
