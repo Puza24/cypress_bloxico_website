@@ -5,7 +5,7 @@
 
 const productsData = require('../data/productsData')
 const BasePage = require('./basePage')
-class productsPage extends BasePage {
+class ProductsPage extends BasePage {
     //Selectors
     productsHome_Header() { return cy.get('h2[class= "elementor-heading-title elementor-size-default"]').eq(0) }
     productsHome_Title() { return cy.get('h2[class= "elementor-heading-title elementor-size-default"]').eq(1) }
@@ -13,7 +13,6 @@ class productsPage extends BasePage {
     productsBreakdown_Title() { return cy.get('h2[class= "elementor-heading-title elementor-size-default"]').eq(3) }
     productsBreakdownSection_Titles() { return cy.get('h2[class= "elementor-heading-title elementor-size-default"]') }
     letsGetStarted_Button() { return cy.get('a[class="elementor-button elementor-button-link elementor-size-lg"]') }
-
     //Methods
     checkProductsHomeHeader() {
         this.productsHome_Header().contains(productsData.productsHeader2[0])
@@ -41,4 +40,4 @@ class productsPage extends BasePage {
     }
 }
 
-module.exports = new productsPage()
+module.exports = new ProductsPage()
