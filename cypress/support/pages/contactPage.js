@@ -5,8 +5,7 @@
 
 const textData = require('../data/textData')
 const BasePage = require('./basePage')
-
-class contactPage extends BasePage {
+class ContactPage extends BasePage {
     //Selectors
     contactHome_Header() { return cy.get('h2[class="elementor-heading-title elementor-size-default"]') }
     contactMain_Title() { return cy.get('h2[class="elementor-heading-title elementor-size-default"]').eq(1) }
@@ -15,7 +14,6 @@ class contactPage extends BasePage {
     aboutOurValues_Tab() { return cy.get('#elementor-tab-title-1802') }
     aboutOurTeam_Tab() { return cy.get('#elementor-tab-title-1803') }
     aboutOurPartners_Tab() { return cy.get('#elementor-tab-title-1804') }
-    // contactAbout_Tabs() {return cy.get('.elementor-element-ac8a3de > :nth-child(1)')}
     contactBloxico_Header() { return cy.get('h2[class="elementor-heading-title elementor-size-default"]').eq(4) }
     joinBloxico_Button() { return cy.get('[class="elementor-button-text"]').contains('JOIN BLOXICO') }
     contactBloxico_Title() { return cy.get('h2[class="elementor-heading-title elementor-size-default"]').eq(5) }
@@ -31,7 +29,6 @@ class contactPage extends BasePage {
     checkContactAboutSection() {
         const tabs = [this.aboutCulture_Tab, this.aboutOurValues_Tab, this.aboutOurTeam_Tab, this.aboutOurPartners_Tab]
         tabs.forEach(tabs => {
-            // tabs().click().should('include', textData.contactAboutTabs)
             tabs().should('not.be.disabled')
         })
     }
@@ -47,4 +44,4 @@ class contactPage extends BasePage {
     }
 }
 
-module.exports = new contactPage()
+module.exports = new ContactPage()

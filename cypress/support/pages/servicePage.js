@@ -5,8 +5,7 @@
 
 const textData = require('../data/textData')
 const BasePage = require('./basePage')
-
-class servicesPage extends BasePage {
+class ServicesPage extends BasePage {
     //Selectors
     services_Header() { return cy.get('h2[class="elementor-heading-title elementor-size-default"]') }
     servicesHome_Header() { return cy.get('h2[class="elementor-heading-title elementor-size-default"]').eq(0) }
@@ -16,7 +15,6 @@ class servicesPage extends BasePage {
     readMore_Button() { return cy.get('.elementor-toggle-title') }
     letsGetStarted_Button() { return cy.get('a[class="elementor-button elementor-button-link elementor-size-lg"]').eq(1) }
     readMoreRSSP_Button() { return cy.get('a[class="elementor-button elementor-button-link elementor-size-lg"]').eq(0) }
-
     //Methods
     checkServicesHomeHeader() {
         this.servicesHome_Header().contains(textData.servicesHeader2[0])
@@ -47,4 +45,4 @@ class servicesPage extends BasePage {
     }
 }
 
-module.exports = new servicesPage() 
+module.exports = new ServicesPage() 
