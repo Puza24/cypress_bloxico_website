@@ -14,5 +14,7 @@ describe("Check Products page", () => {
     it("Check Breakdown Products section", () => {
         productsPage.checkProductsBreakdownHeader()
         productsPage.checkProductsBreakdownTitle()
+        productsPage.checkProductsBreakdownSection()
+        productsPage.checkLetsGetStartedButton()
     })
 })

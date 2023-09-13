@@ -11,6 +11,8 @@ class productsPage extends BasePage {
     productsHome_Title() { return cy.get('h2[class= "elementor-heading-title elementor-size-default"]').eq(1) }
     productsBreakdown_Header() { return cy.get('h2[class= "elementor-heading-title elementor-size-default"]').eq(2) }
     productsBreakdown_Title() { return cy.get('h2[class= "elementor-heading-title elementor-size-default"]').eq(3) }
+    productsBreakdownSection_Titles() { return cy.get('h2[class= "elementor-heading-title elementor-size-default"]') }
+    letsGetStarted_Button() { return cy.get('a[class="elementor-button elementor-button-link elementor-size-lg"]') }
 
     //Methods
     checkProductsHomeHeader() {
@@ -25,5 +27,18 @@ class productsPage extends BasePage {
     checkProductsBreakdownTitle() {
         this.productsBreakdown_Title().contains(productsData.productsBreakdownTitle).should('be.visible')
     }
+    checkProductsBreakdownSection() {
+        for (let index = 4; index <= 7; index++) {
+            this.productsBreakdownSection_Titles().eq(index).should(($element) => {
+                expect($element.text()).to.equal(productsData.productsBreakdownSection[index - 4])
+            })
+        }
+    }
+    checkLetsGetStartedButton() {
+        this.letsGetStarted_Button().click()
+        cy.url().should('include', 'contact')
+        cy.go('back')
+    }
 }
+
 module.exports = new productsPage()
