@@ -5,6 +5,10 @@ module.exports = defineConfig({
     setupNodeEvents(on, config) {
       // implement node event listeners here
     },
-    specPattern: 'cypress/tests/specs/*.js'
-  },
-});
+    specPattern: 'cypress/tests/specs/*.js',
+    baseUrl: 'https://bloxico.com/',
+    viewportWidth: 1920,
+    viewportHeight: 1080,
+    pageLoadTimeout: 10000
+  }
+})

@@ -4,7 +4,7 @@ const projectsPage = require("../../support/pages/projectsPage")
 
 describe("Check Projects page", () => {
     beforeEach(() => {
-        cy.visit('https://bloxico.com/projects')
+        cy.visit('/projects')
     })
     it("Check Home Projects section", () => {
         projectsPage.checkProjectsHomeHeader()
