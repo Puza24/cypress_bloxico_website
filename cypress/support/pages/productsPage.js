@@ -3,7 +3,7 @@
 // productsPage.js
 //
 
-const productsData = require('../data/productsData')
+const textData = require('../data/textData')
 const BasePage = require('./basePage')
 class ProductsPage extends BasePage {
     //Selectors
@@ -15,21 +15,21 @@ class ProductsPage extends BasePage {
     letsGetStarted_Button() { return cy.get('a[class="elementor-button elementor-button-link elementor-size-lg"]') }
     //Methods
     checkProductsHomeHeader() {
-        this.productsHome_Header().contains(productsData.productsHeader2[0])
+        this.productsHome_Header().contains(textData.productsHeader2[0])
     }
     checkProductsHomeTitle() {
-        this.productsHome_Title().contains(productsData.productsHomeTitle).should('be.visible')
+        this.productsHome_Title().contains(textData.productsHomeTitle).should('be.visible')
     }
     checkProductsBreakdownHeader() {
-        this.productsBreakdown_Header().contains(productsData.productsHeader2[1]).should('be.visible')
+        this.productsBreakdown_Header().contains(textData.productsHeader2[1]).should('be.visible')
     }
     checkProductsBreakdownTitle() {
-        this.productsBreakdown_Title().contains(productsData.productsBreakdownTitle).should('be.visible')
+        this.productsBreakdown_Title().contains(textData.productsBreakdownTitle).should('be.visible')
     }
     checkProductsBreakdownSection() {
         for (let index = 4; index <= 7; index++) {
             this.productsBreakdownSection_Titles().eq(index).should(($element) => {
-                expect($element.text()).to.equal(productsData.productsBreakdownSection[index - 4])
+                expect($element.text()).to.equal(textData.productsBreakdownSection[index - 4])
             })
         }
     }

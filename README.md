@@ -2,7 +2,7 @@
 
 - [Description](#description)
 - [Prerequisites](#prerequisites)
-- [Cypress setup](#Cypress-setup)
+- [How to run tests](#how-to-run-tests)
   
 ## Description
 
@@ -10,7 +10,7 @@ This repository purpose is practising writing Automation Tests for [Bloxico webs
 
 ## Prerequisites
 
-Install Node modules v14 or above
+Install Node.js v14 or above
 ```
 npm i 
 ```
@@ -19,21 +19,13 @@ Check if you already have Node or check Node version, run command:
 node -v
 ```
 
-## How to clone repo
+## How to run tests
+1. Clone repo 
+   - Navigate to [cypress-bloxico repo] (https://github.com/Puza24/cypress_bloxico_website)
+   - Clone repo to your local machine, run command: `git clone https://github.com/Puza24/cypress_bloxico_website.git`
+   - Install all dependencies, run command: `npm install`
 
-Clone repo https://github.com/Puza24/cypress_bloxico_website, run command:
-
- ```
-  git clone https://github.com/Puza24/cypress_bloxico_website.git
-  ```
-
-To install all dependencies, run:
-
-```
-npm install
-```
-
-To run Cypress Test runner, run command:
-```
-npx cypress open
-```
+2. Run tests 
+   - To open Cypress Test runner, run command: `npx cypress open`
+   - Run test in headless mode `npm run headless`
+   - Run test in headfull mode `npm run headfull`

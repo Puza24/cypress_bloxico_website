@@ -3,7 +3,7 @@
 // projectsPage.js
 //
 
-const projectsTextData = require('../data/projectsTextData')
+const textData = require('../data/textData')
 const BasePage = require('./basePage')
 class ProjectsPage extends BasePage {
     //Selectors
@@ -20,23 +20,23 @@ class ProjectsPage extends BasePage {
     letsGetStarted_Button() { return cy.get('a[class="elementor-button elementor-button-link elementor-size-lg"]') }
     //Methods
     checkProjectsHomeHeader() {
-        this.projectsHome_Header().contains('Home • Projects').should('be.visible')
+        this.projectsHome_Header().contains(textData.projectsHeader2[0]).should('be.visible')
     }
     checkProjectsMainTitle() {
-        this.projectsMain_Title().contains('Projects we did are a proven track record').should('be.visible')
+        this.projectsMain_Title().contains(textData.projectsTitles).should('be.visible')
     }
     checkProjectsBreakdownHeader() {
-        this.projectsBreakdown_Header().contains('PROJECT BREAKDOWN').should('be.visible')
+        this.projectsBreakdown_Header().contains(textData.projectsHeader2[1]).should('be.visible')
     }
     checkProjectsBreakdownSection() {
         for (let index = 4; index <= 8; index++) {
             this.projects_Header().eq(index).should(($element) => {
-                expect($element.text()).to.equal(projectsTextData.projectsBreakdownTitles[index - 4])
+                expect($element.text()).to.equal(textData.projectsBreakdownTitles[index - 4])
             })
         }
     }
     checkProjectsPartnerHeader() {
-        this.projectsPartners_Header().contains('PARTNERS').should('be.visible')
+        this.projectsPartners_Header().contains(textData.projectsHeader2[2]).should('be.visible')
     }
     // TODO: possible code refactoring, not working ATM
     // checkProjectsPartnerIcons() {
@@ -58,4 +58,5 @@ class ProjectsPage extends BasePage {
         cy.url().should('include', 'contact')
     }
 }
+
 module.exports = new ProjectsPage()

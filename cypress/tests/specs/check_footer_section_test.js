@@ -3,6 +3,7 @@
 import homePage from "../../support/pages/homePage"
 
 describe("Check Footer Section", () => {
+    
     beforeEach(() => {
         cy.visit('/')
     })

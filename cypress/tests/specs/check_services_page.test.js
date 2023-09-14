@@ -3,6 +3,7 @@
 const servicePage = require("../../support/pages/servicePage")
 
 describe("Check Services page", () => {
+    
     beforeEach(() => {
         cy.visit('/services/')
     })
