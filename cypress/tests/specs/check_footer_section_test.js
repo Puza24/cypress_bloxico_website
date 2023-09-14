@@ -3,7 +3,6 @@
 import homePage from "../../support/pages/homePage"
 
 describe("Check Footer Section", () => {
-
     beforeEach(() => {
         cy.visit('https://bloxico.com/')
     })
@@ -25,7 +24,7 @@ describe("Check Footer Section", () => {
     it("Check Privacy Policy hyperlink redirection", () => {
         homePage.checkPrivacyPolicyPageFromFooter()
     })
-    //ToDo - Check if this is better option and why it is not working
+    //TODO: possible code refactoring, not working ATM
     // it.only("Check Servies menu hyperlink redirections", () => {
     //     cy.get('a[style="color: #fff;"]').each(($el, index, $list) => {
     //         if (index < 4) {

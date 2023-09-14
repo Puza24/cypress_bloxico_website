@@ -5,10 +5,8 @@
 
 const urlData = require('../data/urlData')
 const BasePage = require('./basePage')
-
-class homePage extends BasePage {
-
-  //Selectors
+class HomePage extends BasePage {
+    //Selectors
     footerBloxico_Logo() { return cy.get('a[href="https://bloxico.com/"]:visible').eq(1) }
     footerContactSection_Title() { return cy.contains("LET’S GET IN TOUCH!") }
     footerAddress_Text() { return cy.contains('.elementor-element-d8ef344', 'Veljka Dugoševića') }
@@ -18,7 +16,6 @@ class homePage extends BasePage {
     footerPrivacyPolicy_Hyperlink() { return cy.get('a[href="https://bloxico.com/privacy-policy/"]:visible').eq(0) }
     footerServices_Hyperlink() { return cy.get('a[href="https://bloxico.com/services/"]:visible').eq(2) }
     footerProject_Hyperlink() { return cy.get('a[href="https://bloxico.com/projects/"]:visible').eq(1) }
-
     //Methods
     checkBloxicoLogoFromFooter() {
         this.footerBloxico_Logo().click()
@@ -72,4 +69,4 @@ class homePage extends BasePage {
     }
 }
 
-module.exports = new homePage()
+module.exports = new HomePage()
