@@ -4,7 +4,7 @@ import homePage from "../../support/pages/homePage"
 
 describe("Check Footer Section", () => {
     beforeEach(() => {
-        cy.visit('https://bloxico.com/')
+        cy.visit('/')
     })
     it("Check redirection for Bloxico logo", () => {
         homePage.checkBloxicoLogoFromFooter()
