@@ -4,8 +4,8 @@
   "description": "Repository for Bloxico website Automation using Cypress",
   "main": "index.js",
   "scripts": {
-    "headless": "cypress run",
-    "headfull": "cypress open"
+    "headless": "cypress run --browser chrome",
+    "headfull": "cypress open --browser chrome"
   },
   "author": "",
   "license": "ISC",

@@ -1,9 +1,9 @@
 /// <reference types="Cypress" />
 
-import homePage from "../../support/pages/homePage"
+const homePage = require("../../support/pages/homePage")
 
 describe("Check Footer Section", () => {
-    
+
     beforeEach(() => {
         cy.visit('/')
     })
