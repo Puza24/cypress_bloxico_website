@@ -1,10 +1,11 @@
 {
   "name": "bloxicowebsitecypressauotmation",
   "version": "1.0.0",
-  "description": "",
+  "description": "Repository for Bloxico website Automation using Cypress",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "headless": "cypress run --browser chrome",
+    "headfull": "cypress open --browser chrome"
   },
   "author": "",
   "license": "ISC",

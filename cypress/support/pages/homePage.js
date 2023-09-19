@@ -3,6 +3,7 @@
 // homePage.js
 //
 
+const textData = require('../data/textData')
 const urlData = require('../data/urlData')
 const BasePage = require('./basePage')
 class HomePage extends BasePage {
@@ -19,7 +20,7 @@ class HomePage extends BasePage {
     //Methods
     checkBloxicoLogoFromFooter() {
         this.footerBloxico_Logo().click()
-        cy.url().should('include', urlData.footerTextURL[0])
+        cy.url().should('include', textData.footerTextURL[0])
     }
     checkLetsGetInTouchFromFooter() {
         this.footerContactSection_Title().should('be.visible')
@@ -27,22 +28,22 @@ class HomePage extends BasePage {
     }
     checkProductsPageFromFooter() {
         this.footerProducts_Hyperlink().click()
-        cy.url().should('include', urlData.footerTextURL[1])
+        cy.url().should('include', textData.footerTextURL[1])
     }
     checkPrivacyPolicyPageFromFooter() {
         this.footerPrivacyPolicy_Hyperlink().click()
-        cy.url().should('include', urlData.footerTextURL[2])
+        cy.url().should('include', textData.footerTextURL[2])
     }
     checkContactUsPageFromFooter() {
         this.footerContact_Button().click()
-        cy.url().should('include', urlData.footerTextURL[3])
+        cy.url().should('include', textData.footerTextURL[3])
     }
     clickServicesHyperlink() {
         this.footerServices_Hyperlink().click()
     }
     checkServicesMenuFromFooter() {
         this.clickServicesHyperlink()
-        cy.url().should('include', urlData.footerTextURL[4])
+        cy.url().should('include', textData.footerTextURL[4])
         cy.go('back')
         urlData.footerServicesURL.forEach((href) => {
             cy.get(`a[href="${href}"]:visible`).each(($link) => {
@@ -57,7 +58,7 @@ class HomePage extends BasePage {
     }
     checkProjectsMenuFromFooter() {
         this.clickProjectHyperlink()
-        cy.url().should('include', urlData.footerTextURL[5])
+        cy.url().should('include', textData.footerTextURL[5])
         cy.go('back')
         urlData.footerProjectsURL.forEach((href) => {
             cy.get(`a[href="${href}"]:visible`).each(($link) => {
