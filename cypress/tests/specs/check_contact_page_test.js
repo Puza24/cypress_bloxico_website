@@ -1,9 +1,12 @@
-/// <reference types="Cypress" />
+/* 
+  check_contact_page_test.js
+  Steps for test Check contact page 
+*/
 
+/// <reference types="Cypress" />
 const contactPage = require("../../support/pages/contactPage")
 
 describe("Check Services page", () => {
-    
     beforeEach(() => {
         cy.visit('/contact')
     })

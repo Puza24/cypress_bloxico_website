@@ -1,7 +1,7 @@
-//
-// Home page
-// homePage.js
-//
+/*
+  homePage.js
+  Selector and Methods for Home page
+*/
 
 const textData = require('../data/textData')
 const urlData = require('../data/urlData')

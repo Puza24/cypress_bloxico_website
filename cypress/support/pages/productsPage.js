@@ -1,7 +1,7 @@
-//
-// Products page
-// productsPage.js
-//
+/*
+  productsPage.js
+  Selector and Methods for Products page
+*/
 
 const textData = require('../data/textData')
 const BasePage = require('./basePage')

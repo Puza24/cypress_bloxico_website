@@ -1,9 +1,12 @@
-/// <reference types="Cypress" />
+/* 
+  check_projects_page_test.js
+  Steps for test Check projects page 
+*/
 
+/// <reference types="Cypress" />
 const projectsPage = require("../../support/pages/projectsPage")
 
 describe("Check Projects page", () => {
-    
     beforeEach(() => {
         cy.visit('/projects')
     })

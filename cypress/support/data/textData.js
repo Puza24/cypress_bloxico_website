@@ -1,7 +1,7 @@
-//
-// Export text data 
-// textData.js
-//
+/*
+  textData.js
+  Export different kinds od text data
+*/
 
 module.exports = {
     //Services page

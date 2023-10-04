@@ -1,9 +1,12 @@
-/// <reference types="Cypress" />
+/* 
+  check_footer_section_test.js
+  Steps for test Check footer section 
+*/
 
+/// <reference types="Cypress" />
 const homePage = require("../../support/pages/homePage")
 
 describe("Check Footer Section", () => {
-
     beforeEach(() => {
         cy.visit('/')
     })

@@ -1,7 +1,7 @@
-//
-// Contact page 
-// contactPage.js
-//
+/*
+  contactPage.js
+  Selector and Methods for Contacts page
+*/
 
 const textData = require('../data/textData')
 const BasePage = require('./basePage')

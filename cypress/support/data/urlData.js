@@ -1,7 +1,7 @@
-//
-// Export URL data 
-// urlData.js
-//
+/*
+  urlData.js
+  Export url data
+*/
 
 module.exports = {
     //Footer URL
