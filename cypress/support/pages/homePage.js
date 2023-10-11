@@ -53,6 +53,17 @@ class HomePage extends BasePage {
             })
         })
     }
+    //TODO - possible code refacore, not working ATM
+    // checkServicesMenuFromFooter() {
+    //     cy.get('a[style="color: #fff;"]').each(($el, index, $list) => {
+    //         if (index < 4) {
+    //             const href = $el.attr('href')
+    //             cy.wrap($el).as('link').click()
+    //             cy.get('@link').should('include', href)
+    //             cy.go('back')
+    //         }
+    //     })
+    // }
     clickProjectHyperlink() {
         this.footerProject_Hyperlink().click()
     }
@@ -68,6 +79,17 @@ class HomePage extends BasePage {
             })
         })
     }
+    //TODO - possible code refactor, not working ATM
+    // checkProjectsMenuFromFooter() {
+    //     cy.get('a[style="color: #fff;"]').each(($link, index) => {
+    //         if (index > 4 || index < 11) {
+    //             const href = $link.attr('href')
+    //             cy.wrap($link).click()
+    //             cy.url().should('include', href)
+    //             cy.go('back')
+    //         }
+    //     })
+    // }
 }
 
 module.exports = new HomePage()
