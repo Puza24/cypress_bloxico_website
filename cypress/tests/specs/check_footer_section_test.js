@@ -11,7 +11,6 @@ describe("Check Footer Section", () => {
         cy.visit('/')
     })
     it("Check redirection for Bloxico logo", () => {
-
         homePage.checkBloxicoLogoFromFooter()
     })
     it("Check Let's get in touch section", () => {
@@ -32,7 +31,10 @@ describe("Check Footer Section", () => {
     it("Check Services menu hyperlink redirections", () => {
         homePage.checkServicesMenuFromFooter()
     })
-    it.only("Check Project menu hyperlink redirections", () => {
+    it("Check Project menu hyperlink redirections", () => {
         homePage.checkProjectsMenuFromFooter()
     })
+    // it("Check Bloxico Social hyperlink redirection", () => {
+    //     homePage.checkSocialLinksFromFooter()
+    // })
 })

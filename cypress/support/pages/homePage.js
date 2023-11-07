@@ -17,6 +17,8 @@ class HomePage extends BasePage {
     footerPrivacyPolicy_Hyperlink() { return cy.get('a[href="https://bloxico.com/privacy-policy/"]:visible').eq(0) }
     footerServices_Hyperlink() { return cy.get('a[href="https://bloxico.com/services/"]:visible').eq(2) }
     footerProject_Hyperlink() { return cy.get('a[href="https://bloxico.com/projects/"]:visible').eq(1) }
+    footerLinkedIn_Hyperlink() { return cy.get('a[href="https://www.linkedin.com/company/bloxico/"]:visible') }
+    footerTwitter_Hyperlink() { return cy.get('a[href="https://twitter.com/Bloxic0"]') }
     //Methods
     checkBloxicoLogoFromFooter() {
         this.footerBloxico_Logo().click()
@@ -90,6 +92,15 @@ class HomePage extends BasePage {
     //         }
     //     })
     // }
+    //TODO - hyperlink opened in another tab, not working ATM
+    // checkSocialLinksFromFooter() {
+    //     urlData.footerSocialURL.forEach((href) => {
+    //         cy.get(`a[href="${href}"]:visible`).each(($link) => {
+    //             cy.wrap($link).click()
+    //             cy.url().should('include', href)
+    //             cy.go('back')
+    //         })
+    //     })
+    // }
 }
-
 module.exports = new HomePage()
