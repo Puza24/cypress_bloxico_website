@@ -1,5 +1,10 @@
-/// <reference types="Cypress" /> 
+/* 
+  check_home_page.test.js
+  Steps for test Check home page 
+*/
 
+/// <reference types="Cypress" /> 
+//TODO: Create POM and refactor code
 describe("Smoke test Bloxico Website", () => {
 
     beforeEach(() => {

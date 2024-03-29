@@ -1,7 +1,7 @@
-//
-// Home page
-// homePage.js
-//
+/*
+  homePage.js
+  Selector and Methods for Home page
+*/
 
 const textData = require('../data/textData')
 const urlData = require('../data/urlData')
@@ -17,9 +17,11 @@ class HomePage extends BasePage {
     footerPrivacyPolicy_Hyperlink() { return cy.get('a[href="https://bloxico.com/privacy-policy/"]:visible').eq(0) }
     footerServices_Hyperlink() { return cy.get('a[href="https://bloxico.com/services/"]:visible').eq(2) }
     footerProject_Hyperlink() { return cy.get('a[href="https://bloxico.com/projects/"]:visible').eq(1) }
+    footerLinkedIn_Hyperlink() { return cy.get('a[href="https://www.linkedin.com/company/bloxico/"]:visible') }
+    footerTwitter_Hyperlink() { return cy.get('a[href="https://twitter.com/Bloxic0"]') }
     //Methods
     checkBloxicoLogoFromFooter() {
-        this.footerBloxico_Logo().click()
+        this.footerBloxico_Logo().scrollIntoView().click()
         cy.url().should('include', textData.footerTextURL[0])
     }
     checkLetsGetInTouchFromFooter() {
@@ -39,7 +41,7 @@ class HomePage extends BasePage {
         cy.url().should('include', textData.footerTextURL[3])
     }
     clickServicesHyperlink() {
-        this.footerServices_Hyperlink().click()
+        this.footerServices_Hyperlink().scrollIntoView().click()
     }
     checkServicesMenuFromFooter() {
         this.clickServicesHyperlink()
@@ -47,12 +49,23 @@ class HomePage extends BasePage {
         cy.go('back')
         urlData.footerServicesURL.forEach((href) => {
             cy.get(`a[href="${href}"]:visible`).each(($link) => {
-                cy.wrap($link).click()
+                cy.wrap($link).scrollIntoView().click()
                 cy.url().should('include', href)
                 cy.go('back')
             })
         })
     }
+    //TODO - possible code refacore, not working ATM
+    // checkServicesMenuFromFooter() {
+    //     cy.get('a[style="color: #fff;"]').each(($el, index, $list) => {
+    //         if (index < 4) {
+    //             const href = $el.attr('href')
+    //             cy.wrap($el).as('link').click()
+    //             cy.get('@link').should('include', href)
+    //             cy.go('back')
+    //         }
+    //     })
+    // }
     clickProjectHyperlink() {
         this.footerProject_Hyperlink().click()
     }
@@ -68,6 +81,26 @@ class HomePage extends BasePage {
             })
         })
     }
+    //TODO - possible code refactor, not working ATM
+    // checkProjectsMenuFromFooter() {
+    //     cy.get('a[style="color: #fff;"]').each(($link, index) => {
+    //         if (index > 4 || index < 11) {
+    //             const href = $link.attr('href')
+    //             cy.wrap($link).click()
+    //             cy.url().should('include', href)
+    //             cy.go('back')
+    //         }
+    //     })
+    // }
+    // TODO - hyperlink opened in another tab, not working ATM
+    // checkSocialLinksFromFooter() {
+    //     urlData.footerSocialURL.forEach((href) => {
+    //         cy.get(`a[href="${href}"]:visible`).each(($link) => {
+    //             cy.wrap($link).click()
+    //             cy.url().should('include', href)
+    //             cy.go('back')
+    //         })
+    //     })
+    // }
 }
-
 module.exports = new HomePage()

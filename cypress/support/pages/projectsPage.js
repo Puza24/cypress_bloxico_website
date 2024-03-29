@@ -1,7 +1,7 @@
-//
-// Projects page
-// projectsPage.js
-//
+/*
+  projectsPage.js
+  Selector and Methods for Projects page
+*/
 
 const textData = require('../data/textData')
 const BasePage = require('./basePage')

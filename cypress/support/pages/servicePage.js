@@ -1,7 +1,7 @@
-//
-// Service page 
-// servicesPage.js
-//
+/*
+  servicePage.js
+  Selector and Methods for Service page
+*/
 
 const textData = require('../data/textData')
 const BasePage = require('./basePage')
