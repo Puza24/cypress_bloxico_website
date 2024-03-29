@@ -8,6 +8,8 @@ const urlData = require('../data/urlData')
 const BasePage = require('./basePage')
 class HomePage extends BasePage {
     //Selectors
+    title() {return cy.get('h2[class="elementor-heading-title elementor-size-default"]').eq(0)}
+    letsGetStarted_Button() {return cy.contains("LET'S GET STARTED")}
     footerBloxico_Logo() { return cy.get('a[href="https://bloxico.com/"]:visible').eq(1) }
     footerContactSection_Title() { return cy.contains("LET’S GET IN TOUCH!") }
     footerAddress_Text() { return cy.contains('.elementor-element-d8ef344', 'Veljka Dugoševića') }
@@ -80,6 +82,14 @@ class HomePage extends BasePage {
                 cy.go('back')
             })
         })
+    }
+    checkTitle() {
+        this.title().contains(textData.title).should('be.visible')
+    }
+    checkLetsGetStarted() {
+        this.letsGetStarted_Button().click()
+        cy.url().should('include', textData.footerTextURL[4])
+        cy.go('back')
     }
     //TODO - possible code refactor, not working ATM
     // checkProjectsMenuFromFooter() {
