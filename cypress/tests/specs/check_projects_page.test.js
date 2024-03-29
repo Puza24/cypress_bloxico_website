@@ -1,5 +1,5 @@
 /* 
-  check_projects_page_test.js
+  check_projects_page.test.js
   Steps for test Check projects page 
 */
 

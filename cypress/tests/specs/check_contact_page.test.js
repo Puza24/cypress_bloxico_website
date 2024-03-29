@@ -1,5 +1,5 @@
 /* 
-  check_contact_page_test.js
+  check_contact_page.test.js
   Steps for test Check contact page 
 */
 

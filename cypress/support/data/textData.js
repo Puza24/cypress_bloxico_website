@@ -19,7 +19,7 @@ module.exports = {
     //Projects page
     projectsHeader2: ['Home • Projects', 'PROJECT BREAKDOWN', 'PARTNERS'],
     projectsTitles: 'Projects we did are a proven track record',
-    projectsBreakdownTitles: ['NFT TiX', 'KEEVO', 'Atala SCAN', 'Catalyst Voting System', 'System Test Matrix'],
+    projectsBreakdownTitles: ['Tixbase', 'FLARE', 'Atala SCAN', 'Catalyst Voting System', 'System Test Matrix'],
     projectsPartnersURL: ['filecoin', 'copyleft.solutions'],
     //Footer text
     footerTextURL: ['bloxico', 'products', 'privacy-policy', 'contact', 'services', 'projects']

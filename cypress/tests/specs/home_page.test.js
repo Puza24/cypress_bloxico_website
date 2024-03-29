@@ -1,5 +1,5 @@
 /* 
-  check_home_page_test.js
+  check_home_page.test.js
   Steps for test Check home page 
 */
 

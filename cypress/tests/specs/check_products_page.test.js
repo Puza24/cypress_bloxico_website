@@ -1,5 +1,5 @@
 /* 
-  check_products_page_test.js
+  check_products_page.test.js
   Steps for test Check products page 
 */
 

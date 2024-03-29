@@ -1,5 +1,5 @@
 /* 
-  check_services_page_test.js
+  check_services_page.test.js
   Steps for test Check services page 
 */
 

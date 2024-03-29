@@ -21,7 +21,7 @@ class HomePage extends BasePage {
     footerTwitter_Hyperlink() { return cy.get('a[href="https://twitter.com/Bloxic0"]') }
     //Methods
     checkBloxicoLogoFromFooter() {
-        this.footerBloxico_Logo().click()
+        this.footerBloxico_Logo().scrollIntoView().click()
         cy.url().should('include', textData.footerTextURL[0])
     }
     checkLetsGetInTouchFromFooter() {
@@ -41,7 +41,7 @@ class HomePage extends BasePage {
         cy.url().should('include', textData.footerTextURL[3])
     }
     clickServicesHyperlink() {
-        this.footerServices_Hyperlink().click()
+        this.footerServices_Hyperlink().scrollIntoView().click()
     }
     checkServicesMenuFromFooter() {
         this.clickServicesHyperlink()
@@ -49,7 +49,7 @@ class HomePage extends BasePage {
         cy.go('back')
         urlData.footerServicesURL.forEach((href) => {
             cy.get(`a[href="${href}"]:visible`).each(($link) => {
-                cy.wrap($link).click()
+                cy.wrap($link).scrollIntoView().click()
                 cy.url().should('include', href)
                 cy.go('back')
             })
@@ -92,7 +92,7 @@ class HomePage extends BasePage {
     //         }
     //     })
     // }
-    //TODO - hyperlink opened in another tab, not working ATM
+    // TODO - hyperlink opened in another tab, not working ATM
     // checkSocialLinksFromFooter() {
     //     urlData.footerSocialURL.forEach((href) => {
     //         cy.get(`a[href="${href}"]:visible`).each(($link) => {
