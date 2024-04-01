@@ -4,7 +4,6 @@
 */
 
 /// <reference types="Cypress" />
-const textData = require("../../support/data/textData");
 const homePage = require("../../support/pages/homePage");
 
 describe("Smoke test Bloxico Website", () => {
