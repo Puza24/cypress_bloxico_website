@@ -16,8 +16,8 @@ jobs:
         #  - name: Clean Install Node
         #    run: npm ci
     
-         - name: Install Cypress
-           run: npm install cypress --save-dev
+        #  - name: Install Cypress
+        #    run: npm install cypress --save-dev
 
          - name: Check node version
            run: node -v
