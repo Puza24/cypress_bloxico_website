@@ -5,8 +5,23 @@ jobs:
     Regression-test:
         runs-on: ubuntu-latest
         steps:
+         - name: Checkout
+           uses: actions/checkout@v4
+    
+         - name: Setup Node
+           uses: actions/setup-node@v4
+           with:
+              node-version: 18.14.1
+    
+         - name: Clean Install Node
+           run: npm ci
+    
+         - name: Install Cypress
+           run: npm install cypress --save-dev
+
          - name: Check node version
-           run: node -v 
+           run: node -v
+
          - name: Run Regression tests
            if: always()
            run: npm run headless
