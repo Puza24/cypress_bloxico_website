@@ -4,6 +4,8 @@
 */
 
 module.exports = {
+    //Home page 
+    title: 'Second to none in Blockchain solutions',
     //Services page
     servicesHeader2: ['Home • Services', 'SERVICE BREAKDOWN', 'HOW WE DO IT'],
     breakdownSectionTitles: ['Software Development', 'IT Outsourcing', 'Blockchain consulting'],
