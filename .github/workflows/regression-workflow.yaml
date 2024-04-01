@@ -1,0 +1,12 @@
+name: Main Regression test
+on: push
+
+jobs:
+    Regression-test:
+        runs-on: ubuntu-latest
+        steps:
+         - name: Check node version
+           run: node -v 
+         - name: Run Regression tests
+           if: always()
+           run: npm run headless
