@@ -5,6 +5,12 @@ jobs:
     Regression-test:
         runs-on: ubuntu-latest
         steps:
+         - name: Setup Node
+           uses: actions/setup-node@v4
+           with:
+            node-version: 18.14.1
+         - name: Clean Install Node
+           run: npm ci
          - name: Check node version
            run: node -v 
          - name: Run Regression tests
