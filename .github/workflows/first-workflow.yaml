@@ -22,6 +22,5 @@ jobs:
     steps:
         - name: echo a string
           run: Write-Output "Window-String"
-          # This should result in failed job
-        - name: Error Step
+        - name: Error Step # This should result in failed job
           run: does-not-exists 
