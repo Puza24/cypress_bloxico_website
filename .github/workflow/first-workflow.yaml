@@ -1,5 +1,5 @@
 name: First Workflow - example
-on: [push]
+on: push
 
 jobs: 
   run-shell-commands:
