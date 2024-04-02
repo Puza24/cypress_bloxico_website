@@ -1,0 +1,26 @@
+name: First Workflow - example
+on: [push]
+
+jobs:
+  run-shell-commands:
+    runs-on: ubuntu-latest
+    steps:
+      - name: echo a string
+        run: echo “Hello World”
+      - name: Multiline command
+        run: |
+          node -v
+          npm -v
+  parallel-job-macos:
+    runs-on: macos-latest
+    steps:
+        - name: View Software Version
+          run: sw_vers
+  dependant-job:
+    runs-on: windows-latest
+    needs: run-shell-commands
+    steps:
+        - name: echo a string
+          run: Write-Output "Window-String"
+        - name: Error Step # This should result in failed job
+          run: does-not-exists 
