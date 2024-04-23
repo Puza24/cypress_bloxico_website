@@ -1,0 +1,25 @@
+name: Bloxico Website Health Check
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 * * * *'  # Run every hour
+
+jobs:
+  bloxico_website_health_check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: BLoxico Website Health Check
+        run: |
+          response=$(curl -s -o /dev/null -w "%{http_code}" https://www.google.com/404)
+          if [ $response -ne 200 ]; then
+           exit 1
+          fi
+
+      - name: Notify on Slack if bloxico website is down
+        if: failure()
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_WEBHOOK: ${{ secrets.BLOXICO_WEBSITE_HEALTH_CHECK }}
+          SLACK_MESSAGE: 'Bloxico website is down or not responding correctly'
