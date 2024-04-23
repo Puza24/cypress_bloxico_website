@@ -13,6 +13,7 @@ jobs:
       - name: BLoxico Website Health Check
         run: |
           response=$(curl -s -o /dev/null -w "%{http_code}" https://bloxico.com/)
+          echo "HTTP response code: $response"
           if [ $response -ne 200 ]; then
            exit 1
           fi
